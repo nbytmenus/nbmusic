@@ -1,0 +1,48 @@
+:root {
+  --bg: #0c0f17;
+  --panel: #121826;
+  --soft: #1b2335;
+  --text: #edf2ff;
+  --muted: #93a0bd;
+  --green: #1ed760;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: radial-gradient(circle at top, #18223b 0%, var(--bg) 45%);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.app-shell { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 92px); }
+.sidebar { background: rgba(5, 9, 16, 0.7); padding: 1.25rem; border-right: 1px solid #27334e; }
+.content { padding: 1.5rem; }
+.card { background: var(--panel); border: 1px solid #2c3852; border-radius: 14px; padding: 1rem; margin-bottom: .75rem; min-height: 96px; }
+.track-grid { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.track { background: linear-gradient(180deg, #151d2f 0%, #101725 100%); border: 1px solid #2b3855; border-radius: 14px; padding: 1rem; }
+.track button { margin-top: .7rem; width: 100%; }
+.muted { color: var(--muted); font-size: .92rem; }
+
+.btn { border: none; padding: .65rem .8rem; border-radius: 10px; background: var(--soft); color: var(--text); cursor: pointer; margin-top: .5rem; }
+.btn.primary { background: var(--green); color: #04210e; font-weight: 700; }
+.btn.ghost { background: transparent; border: 1px solid #33415f; }
+.hidden { display: none !important; }
+
+.player-bar { border-top: 1px solid #2a3552; background: #09101d; padding: .8rem 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+audio { width: min(600px, 100%); }
+
+.dialog-form { display: grid; gap: .7rem; min-width: min(420px, 90vw); }
+label { display: grid; gap: .35rem; font-size: .9rem; }
+input { background: #0d1423; border: 1px solid #2f3f5d; color: var(--text); border-radius: 8px; padding: .55rem .7rem; }
+.row { display: flex; gap: .5rem; }
+.msg { min-height: 1.2rem; color: #ff8fa3; }
+dialog { border: 1px solid #364666; border-radius: 12px; background: #0d1422; color: var(--text); }
+
+@media (max-width: 800px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid #27334e; }
+}
