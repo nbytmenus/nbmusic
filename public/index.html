@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBMusic - Stream Your Uploads</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h1>NBMusic</h1>
+      <p class="muted">Your private streaming hub</p>
+      <div id="userArea" class="card"></div>
+      <button id="openAuth" class="btn primary">Login / Register</button>
+      <button id="logoutBtn" class="btn ghost hidden">Logout</button>
+      <button id="openDevPanel" class="btn hidden">Dev Panel</button>
+    </aside>
+
+    <main class="content">
+      <header>
+        <h2>Library</h2>
+        <p class="muted">Spotify-like UI with your own uploaded tracks.</p>
+      </header>
+      <section id="trackGrid" class="track-grid"></section>
+    </main>
+  </div>
+
+  <footer class="player-bar">
+    <div>
+      <strong id="nowPlaying">Not playing</strong>
+      <div id="nowArtist" class="muted"></div>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+  </footer>
+
+  <dialog id="authDialog">
+    <form id="authForm" class="dialog-form">
+      <h3>Welcome to NBMusic</h3>
+      <label>Username <input name="username" required /></label>
+      <label>Password <input name="password" type="password" minlength="6" required /></label>
+      <div class="row">
+        <button type="button" id="registerBtn" class="btn">Register</button>
+        <button type="submit" class="btn primary">Login</button>
+      </div>
+      <button type="button" id="closeAuth" class="btn ghost">Close</button>
+      <p id="authMsg" class="msg"></p>
+    </form>
+  </dialog>
+
+  <dialog id="devDialog">
+    <form id="unlockForm" class="dialog-form">
+      <h3>Unlock Admin Dev Panel</h3>
+      <label>Admin Panel Password <input name="password" type="password" required /></label>
+      <div class="row">
+        <button type="submit" class="btn primary">Unlock</button>
+        <button type="button" id="closeDev" class="btn ghost">Close</button>
+      </div>
+      <p id="unlockMsg" class="msg"></p>
+    </form>
+
+    <form id="uploadForm" class="dialog-form hidden" enctype="multipart/form-data">
+      <h3>Upload Track</h3>
+      <label>Title <input name="title" required /></label>
+      <label>Artist <input name="artist" required /></label>
+      <label>Audio File <input name="audioFile" type="file" accept="audio/*" required /></label>
+      <div class="row">
+        <button type="submit" class="btn primary">Upload</button>
+      </div>
+      <p id="uploadMsg" class="msg"></p>
+    </form>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "nbmusic",
+  "version": "1.0.0",
+  "description": "Spotify-like music streaming app with auth, uploads, and admin dev panel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
